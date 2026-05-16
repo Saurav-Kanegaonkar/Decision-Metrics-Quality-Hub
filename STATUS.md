@@ -2,7 +2,7 @@
 
 - Project: Decision Metrics Quality Hub
 - GitHub: https://github.com/Saurav-Kanegaonkar/Decision-Metrics-Quality-Hub
-- Status: artifact ready
+- Status: pushed
 - Resume Link Ready: Yes
 
 ## What Exists
