@@ -1,0 +1,5 @@
+signal,segment,status,finding,risk
+"Revenue KPI","Sales","Fresh","Owner mismatch","High"
+"Activation KPI","Product","Fresh","Definition drift","High"
+"Support SLA","Ops","Stale","Excel version gap","Medium"
+"Pipeline health","Sales","Fresh","No issue","Low"
