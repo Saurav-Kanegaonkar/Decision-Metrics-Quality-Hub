@@ -1,5 +1,25 @@
-signal,segment,status,finding,risk
-"Revenue KPI","Sales","Fresh","Owner mismatch","High"
-"Activation KPI","Product","Fresh","Definition drift","High"
-"Support SLA","Ops","Stale","Excel version gap","Medium"
-"Pipeline health","Sales","Fresh","No issue","Low"
+metric,team,owner,system,dashboard,freshnessHours,definitionScore,usage30d,variancePct,excelMismatchRate,issueCount,decisionCriticality
+Net revenue retention,Sales,Revenue Ops,Warehouse,Executive scorecard,7,94,186,1.1,0.4,1,5
+Qualified pipeline coverage,Sales,Sales Analytics,CRM,Pipeline weekly review,11,88,151,2.7,1.1,2,5
+Stage conversion rate,Sales,Unassigned,CRM,Pipeline weekly review,28,72,118,4.6,3.8,5,4
+Average discount depth,Sales,Finance BI,Billing,Deal desk monitor,17,81,83,2.3,4.9,4,3
+Activation rate,Product,Product Analytics,Event stream,Product adoption hub,9,91,174,1.8,0.7,1,5
+Feature adoption rate,Product,Product Analytics,Event stream,Product adoption hub,21,79,132,3.2,1.9,3,4
+Trial to paid conversion,Product,Growth Analytics,Warehouse,Growth funnel,31,74,143,5.1,4.2,6,5
+In-app engagement depth,Product,Unassigned,Event stream,Product adoption hub,42,68,77,6.4,5.6,7,3
+Marketing qualified leads,Marketing,Demand Gen Ops,Marketing automation,Demand performance,13,86,129,2.2,1.4,2,4
+Campaign sourced pipeline,Marketing,Demand Gen Ops,CRM,Demand performance,29,76,112,4.7,4.4,5,4
+Paid acquisition CAC,Marketing,Finance BI,Ads platform,Spend efficiency,35,71,94,6.8,6.2,6,5
+Email nurture conversion,Marketing,Lifecycle Marketing,Marketing automation,Lifecycle monitor,19,83,71,2.9,2.1,2,2
+Gross margin,Finance,Finance BI,ERP,Board packet,8,96,168,0.9,0.3,0,5
+Budget variance,Finance,FP&A,ERP,Monthly business review,16,89,157,1.6,0.8,1,5
+Bookings forecast accuracy,Finance,FP&A,Spreadsheet model,Forecast review,37,77,109,5.7,7.5,6,5
+Cash collection cycle,Finance,Billing Ops,Billing,Finance operations,23,82,88,3.4,3.2,3,3
+Support first response SLA,Support,Support Ops,Ticketing,Customer operations,10,90,136,1.9,1.2,1,4
+Escalation rate,Support,Support Ops,Ticketing,Customer operations,25,80,97,3.6,2.6,4,4
+Customer satisfaction,Support,Customer Insights,Survey platform,Voice of customer,49,70,91,6.1,5.8,7,4
+Case backlog age,Support,Unassigned,Ticketing,Customer operations,33,73,82,4.8,4.7,5,3
+Fulfillment cycle time,Operations,Ops Analytics,Operations database,Service delivery,14,87,124,2.4,1.6,2,4
+Implementation on-time rate,Operations,Ops Analytics,Project tracker,Service delivery,26,79,101,3.9,3.1,4,4
+Data handoff defect rate,Operations,Data Operations,Warehouse,Data quality review,12,92,119,1.3,0.9,1,4
+Manual adjustment volume,Operations,Data Operations,Spreadsheet model,Data quality review,53,66,69,7.2,8.1,8,3

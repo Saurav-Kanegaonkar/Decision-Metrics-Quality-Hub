@@ -7,7 +7,9 @@
 
 ## What Exists
 
-- Dashboard page with four labeled outputs
-- Synthetic operating data and data dictionary
-- README with motivation, interpretation, output walkthrough, and local run instructions
-- Screenshot embedded at docs/images/dashboard.png
+- Static dashboard with four distinct surfaces.
+- Synthetic metric quality register with 24 cross-functional KPI records.
+- Computed trust score, decision risk, root causes, quality tests, and stakeholder readout.
+- SQL audit pattern in `sql/metric_quality_audit.sql`.
+- Data dictionary with synthesis assumptions.
+- README with three rendered screenshots and captions.

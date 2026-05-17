@@ -8,41 +8,113 @@
 </head>
 <body>
   <main class="app">
-    <header class="hero">
+    <header class="hero" id="top">
       <div>
-        <p class="eyebrow">Decision Analytics</p>
+        <p class="eyebrow">Decision analytics</p>
         <h1>Decision Metrics Quality Hub</h1>
-        <p>Leadership needs a fast way to see which metrics are reliable enough for decision-making and which dashboards require cleanup before performance reviews.</p>
+        <p>Metric governance, dashboard quality, and stakeholder-ready recommendations for a cross-functional data analyst supporting business decisions.</p>
       </div>
-      <div class="hero-card">
-        <span>Decision risk</span>
-        <strong>6</strong>
-        <small>2 urgent</small>
-      </div>
+      <aside class="hero-card" aria-label="Decision trust summary">
+        <span>Trust score</span>
+        <strong id="heroScore">0%</strong>
+        <small id="heroContext">Loading metrics</small>
+      </aside>
     </header>
-    <section>
-      <span class="output-tag">Output 1 · Executive pulse</span>
+
+    <nav class="surface-nav" aria-label="Artifact surfaces">
+      <a href="#executive">Executive pulse</a>
+      <a href="#workbench">Quality workbench</a>
+      <a href="#evidence">SQL evidence</a>
+      <a href="#readout-section">Stakeholder readout</a>
+    </nav>
+
+    <section class="surface" id="executive">
+      <div class="section-heading">
+        <p class="eyebrow">Surface 1</p>
+        <h2>Executive trust pulse</h2>
+        <p>Fast read on whether leaders should trust, investigate, or block each metric before acting on it.</p>
+      </div>
+      <div class="filters" id="filters" aria-label="Team filters"></div>
       <div class="metric-grid" id="metrics"></div>
-    </section>
-    <section class="grid">
-      <article class="panel wide">
-        <p class="eyebrow">Diagnostic table</p>
-        <span class="output-tag">Output 2 · Operating queue</span>
-        <h2>Where the team should focus next</h2>
-        <div id="table"></div>
-      </article>
       <article class="panel">
-        <p class="eyebrow">What the data says</p>
-        <span class="output-tag">Output 3 · Analytical readout</span>
-        <h2>Signals behind the recommendation</h2>
-        <div id="signals"></div>
+        <div class="panel-title">
+          <div>
+            <p class="eyebrow">Decision readiness</p>
+            <h3>Trust score by function</h3>
+          </div>
+          <a href="#workbench">Open issue queue</a>
+        </div>
+        <div class="team-pulse" id="teamPulse"></div>
       </article>
     </section>
-    <section class="panel">
-      <p class="eyebrow">Recommendation memo</p>
-      <span class="output-tag">Output 4 · Next actions</span>
-      <h2>Recommended moves</h2>
-      <div id="recs" class="memo-grid"></div>
+
+    <section class="surface" id="workbench">
+      <div class="section-heading">
+        <p class="eyebrow">Surface 2</p>
+        <h2>Metric quality workbench</h2>
+        <p>Ranked remediation queue that converts raw quality signals into owner-ready next actions.</p>
+      </div>
+      <article class="panel table-panel">
+        <div class="panel-title">
+          <div>
+            <p class="eyebrow">Issue triage</p>
+            <h3>Where the analyst should focus this week</h3>
+          </div>
+          <span class="note">Filtered by the selected function above</span>
+        </div>
+        <div id="workbenchTable"></div>
+      </article>
+    </section>
+
+    <section class="surface" id="evidence">
+      <div class="section-heading">
+        <p class="eyebrow">Surface 3</p>
+        <h2>SQL and reconciliation evidence</h2>
+        <p>Audit checks for freshness, ownership, definition drift, and Excel variance against governed reporting outputs.</p>
+      </div>
+      <div class="test-grid" id="qualityTests"></div>
+      <div class="evidence-grid">
+        <article class="panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">SQL pattern</p>
+              <h3>Metric trust scoring logic</h3>
+            </div>
+          </div>
+          <pre><code>select
+  metric_name,
+  metric_owner,
+  definition_score,
+  warehouse_variance_pct,
+  excel_mismatch_rate,
+  case
+    when definition_score &lt; 80 then 'definition drift'
+    when warehouse_variance_pct &gt; 4 then 'source variance'
+    when excel_mismatch_rate &gt; 4 then 'spreadsheet mismatch'
+    else 'monitor'
+  end as primary_quality_flag
+from metric_quality_audit
+where decision_criticality &gt;= 4;</code></pre>
+        </article>
+        <article class="panel table-panel">
+          <div class="panel-title">
+            <div>
+              <p class="eyebrow">Reconciliation</p>
+              <h3>BI to Excel variance checks</h3>
+            </div>
+          </div>
+          <div id="reconciliation"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="surface" id="readout-section">
+      <div class="section-heading">
+        <p class="eyebrow">Surface 4</p>
+        <h2>Stakeholder readout</h2>
+        <p>Plain-English recommendations a data analyst could present to non-technical business partners.</p>
+      </div>
+      <div class="memo-grid" id="readout"></div>
     </section>
   </main>
   <script src="src/data.js"></script>
